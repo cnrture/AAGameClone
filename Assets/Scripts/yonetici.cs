@@ -27,7 +27,7 @@ public class yonetici : MonoBehaviour
         OkSpawn();
         DusmanOkSetSpawn();
 
-        guncelkalanOk = PlayerPrefs.GetInt("seviye6") + ilkkalanOk;
+        guncelkalanOk = PlayerPrefs.GetInt("levelup") + ilkkalanOk;
         yedekkalanOk = guncelkalanOk;
         kalanOkText.text = guncelkalanOk.ToString();
     }
@@ -61,7 +61,7 @@ public class yonetici : MonoBehaviour
         if (guncelkalanOk == 0)
         {
             Time.timeScale = 0.0f;
-            PlayerPrefs.SetInt("seviye5", yedekkalanOk);
+            PlayerPrefs.SetInt("levelup", yedekkalanOk);
             oyunBittiEkran.SetActive(true);
             oyunBittiText.SetText("TEBRİKLER");
             sonrakiSeviyeButton.SetActive(true);
@@ -71,7 +71,7 @@ public class yonetici : MonoBehaviour
     public void OyunLose()
     {
         Time.timeScale = 0.0f;
-        PlayerPrefs.SetInt("seviye5", yedekkalanOk-5);
+        PlayerPrefs.SetInt("levelup", yedekkalanOk-5);
         oyunBittiEkran.SetActive(true);
         oyunBittiText.SetText("KAYBETTİN");
         tekrarOynaButton.SetActive(true);
